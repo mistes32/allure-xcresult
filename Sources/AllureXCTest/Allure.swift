@@ -89,7 +89,7 @@ public enum Allure {
 
 extension Allure {
     fileprivate static func labelStep(key labelName: String, value: String) {
-        XCTContext.empty(with: "allure_label_\(labelName)_\(value)")
+        XCTContext.empty(with: "allure.label.\(labelName).\(value)")
     }
 }
 

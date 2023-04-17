@@ -144,18 +144,18 @@ extension Allure2Converter {
 }
 
 extension TestActivity {
-    private static let allureLabel = "allure_label"
+    private static let allureLabel = "allure.label"
 
     var isAllureLabel: Bool {
         title.starts(with: TestActivity.allureLabel)
     }
 
     var allureLabel: (key: String, value: String)? {
-        let parts = title.dropFirst(TestActivity.allureLabel.count + 1).split(separator: "_") // label + '_'
+        let parts = title.dropFirst(TestActivity.allureLabel.count + 1).split(separator: ".") // label + '_'
         guard parts.count >= 2 else { return nil }
 
         let key = String(parts[0])
-        let value = parts.dropFirst().joined(separator: "_")
+        let value = parts.dropFirst().joined(separator: ".")
 
         return (key, value)
     }
