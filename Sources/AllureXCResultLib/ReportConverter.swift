@@ -8,11 +8,21 @@
 import Foundation
 
 public struct TestConvertionError {
+    public init(message: String, name: String) {
+        self.message = message
+        self.name = name
+    }
+    
     public let message: String
     public let name: String
 }
 
 public struct AttachmentExportInfo {
+    public init(name: String, exportedFileURL: URL? = nil) {
+        self.name = name
+        self.exportedFileURL = exportedFileURL
+    }
+    
     public let name: String
     public let exportedFileURL: URL?
 }
@@ -20,6 +30,11 @@ public struct AttachmentExportInfo {
 public typealias LazyAttachment = () -> AttachmentExportInfo
 
 public struct AllureReport {
+    public init(tests: [TestResult], attachments: [LazyAttachment]) {
+        self.tests = tests
+        self.attachments = attachments
+    }
+    
     public let tests: [TestResult]
     public let attachments: [LazyAttachment]
 }

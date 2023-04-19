@@ -67,11 +67,11 @@ extension Allure2Converter {
         return (summary.path.prefix(1) + [summary.identifier]).joined(separator: "/")
     }
 
-    private static func makeAttachment(from attachment: TestAttachment) -> Attachment {
+    public static func makeAttachment(from attachment: TestAttachment) -> Attachment {
         Attachment(name: attachment.name, source: attachment.name, type: nil)
     }
 
-    private static func makeStep(from activity: TestActivity) -> StepResult? {
+    public static func makeStep(from activity: TestActivity) -> StepResult? {
         if activity.isAllureLabel {
             return nil
         }
