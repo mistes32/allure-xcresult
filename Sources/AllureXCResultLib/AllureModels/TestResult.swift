@@ -9,6 +9,27 @@ import Foundation
 
 // see: https://github.com/allure-framework/allure-java/tree/2.17.2/allure-model/src/main/java/io/qameta/allure/model/TestResult.java
 public struct TestResult: Encodable {
+    public init(uuid: String, historyId: String, testCaseId: String? = nil, testCaseName: String? = nil, fullName: String, labels: [Label], links: [Link], name: String, status: Status, statusDetails: StatusDetails? = nil, stage: Stage? = nil, description: String? = nil, descriptionHtml: String? = nil, steps: [StepResult], attachments: [Attachment], parameters: [Parameter], start: Int, stop: Int) {
+        self.uuid = uuid
+        self.historyId = historyId
+        self.testCaseId = testCaseId
+        self.testCaseName = testCaseName
+        self.fullName = fullName
+        self.labels = labels
+        self.links = links
+        self.name = name
+        self.status = status
+        self.statusDetails = statusDetails
+        self.stage = stage
+        self.description = description
+        self.descriptionHtml = descriptionHtml
+        self.steps = steps
+        self.attachments = attachments
+        self.parameters = parameters
+        self.start = start
+        self.stop = stop
+    }
+    
     public let uuid: String
     public let historyId: String
     public let testCaseId: String?
@@ -23,7 +44,7 @@ public struct TestResult: Encodable {
     public let description: String?
     public let descriptionHtml: String?
     public let steps: [StepResult]
-    public let attachments: [Attachment]
+    public var attachments: [Attachment]
     public let parameters: [Parameter]
     public let start: Int
     public let stop: Int
