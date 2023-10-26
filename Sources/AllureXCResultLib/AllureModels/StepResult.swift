@@ -9,7 +9,7 @@ import Foundation
 
 // see: https://github.com/allure-framework/allure-java/tree/2.17.2/allure-model/src/main/java/io/qameta/allure/model/StepResult.java
 public struct StepResult: Encodable {
-    internal init(name: String, status: Status, statusDetails: StatusDetails? = nil, stage: Stage? = nil, description: String? = nil, descriptionHtml: String? = nil, steps: [StepResult], attachments: [Attachment], parameters: [Parameter], start: Int, stop: Int) {
+    public init(name: String, status: Status, statusDetails: StatusDetails? = nil, stage: Stage? = nil, description: String? = nil, descriptionHtml: String? = nil, steps: [StepResult], attachments: [Attachment], parameters: [Parameter], start: Int, stop: Int) {
         self.name = name
         self.status = status
         self.statusDetails = statusDetails
