@@ -30,22 +30,22 @@ public struct TestResult: Encodable {
         self.stop = stop
     }
     
-    public let uuid: String
-    public let historyId: String
-    public let testCaseId: String?
-    public let testCaseName: String?
-    public let fullName: String
-    public let labels: [Label]
-    public let links: [Link]
-    public let name: String
-    public let status: Status
-    public let statusDetails: StatusDetails?
-    public let stage: Stage?
-    public let description: String?
-    public let descriptionHtml: String?
-    public let steps: [StepResult]
+    public var uuid: String
+    public var historyId: String
+    public var testCaseId: String?
+    public var testCaseName: String?
+    public var fullName: String
+    public var labels: [Label]
+    public var links: [Link]
+    public var name: String
+    public var status: Status
+    public var statusDetails: StatusDetails?
+    public var stage: Stage?
+    public var description: String?
+    public var descriptionHtml: String?
+    public var steps: [StepResult]
     public var attachments: [Attachment]
-    public let parameters: [Parameter]
-    public let start: Int
-    public let stop: Int
+    public var parameters: [Parameter]
+    public var start: Int
+    public var stop: Int
 }
